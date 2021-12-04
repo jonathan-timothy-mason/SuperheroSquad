@@ -10,7 +10,7 @@ import UIKit
 
 /// Character for selection into squad.
 struct Character {
-    static let defaultSystemImageName = "questionmark.circle.fill"
+    static let defaultSystemImageName = "questionmark.circle.fill.ar"
        
     /// Default initialiser.
     /// - Parameters:

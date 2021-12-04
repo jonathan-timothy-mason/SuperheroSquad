@@ -51,8 +51,11 @@ class MainViewController: UIViewController {
         squad.append(temp5)
         
         // Create temp characters.
-        for _ in 1...100 {
+        for _ in 1...25 {
             characters.append(Character(name: "Dad", bio: "What a guy!", photoURL: nil, photo: UIImage(named: "test")))
+        }
+        for _ in 1...25 {
+            characters.append(Character(name: "Mum", bio: "Soooo nice.", photoURL: nil, photo: nil))
         }
     }
 }

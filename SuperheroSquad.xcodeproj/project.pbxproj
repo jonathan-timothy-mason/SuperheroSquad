@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB855678275B87FA00992B9D /* MarvelResultImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB855677275B87FA00992B9D /* MarvelResultImage.swift */; };
+		AB85567A275B963A00992B9D /* GeneralErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB855679275B963A00992B9D /* GeneralErrorResponse.swift */; };
 		ABC2AC7E275ACCEB000A8D51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2AC7D275ACCEB000A8D51 /* AppDelegate.swift */; };
 		ABC2AC80275ACCEB000A8D51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2AC7F275ACCEB000A8D51 /* SceneDelegate.swift */; };
-		ABC2AC82275ACCEB000A8D51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2AC81275ACCEB000A8D51 /* ViewController.swift */; };
+		ABC2AC82275ACCEB000A8D51 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2AC81275ACCEB000A8D51 /* MainViewController.swift */; };
 		ABC2AC85275ACCEB000A8D51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC2AC83275ACCEB000A8D51 /* Main.storyboard */; };
 		ABC2AC87275ACCEC000A8D51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC2AC86275ACCEC000A8D51 /* Assets.xcassets */; };
 		ABC2AC8A275ACCEC000A8D51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC2AC88275ACCEC000A8D51 /* LaunchScreen.storyboard */; };
@@ -42,10 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB855677275B87FA00992B9D /* MarvelResultImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelResultImage.swift; sourceTree = "<group>"; };
+		AB855679275B963A00992B9D /* GeneralErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralErrorResponse.swift; sourceTree = "<group>"; };
 		ABC2AC7A275ACCEB000A8D51 /* SuperheroSquad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperheroSquad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC2AC7D275ACCEB000A8D51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABC2AC7F275ACCEB000A8D51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ABC2AC81275ACCEB000A8D51 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ABC2AC81275ACCEB000A8D51 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ABC2AC84275ACCEB000A8D51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABC2AC86275ACCEC000A8D51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABC2AC89275ACCEC000A8D51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -144,7 +148,7 @@
 		ABC2ACAD275ACD01000A8D51 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				ABC2AC81275ACCEB000A8D51 /* ViewController.swift */,
+				ABC2AC81275ACCEB000A8D51 /* MainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -171,7 +175,9 @@
 				ABC2ACB8275ACE89000A8D51 /* MarvelClient.swift */,
 				ABC2ACBC275ACFD3000A8D51 /* MarvelResultResponse.swift */,
 				ABC2ACBF275AD8FC000A8D51 /* MarvelResultCharacter.swift */,
+				AB855677275B87FA00992B9D /* MarvelResultImage.swift */,
 				ABC2ACBB275ACFD3000A8D51 /* MarvelErrorResponse.swift */,
+				AB855679275B963A00992B9D /* GeneralErrorResponse.swift */,
 				ABC2ACB7275ACE89000A8D51 /* StringExtensions.swift */,
 			);
 			path = Marvel;
@@ -308,11 +314,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABC2AC82275ACCEB000A8D51 /* ViewController.swift in Sources */,
+				ABC2AC82275ACCEB000A8D51 /* MainViewController.swift in Sources */,
 				ABC2ACBE275ACFD3000A8D51 /* MarvelResultResponse.swift in Sources */,
 				ABC2ACC0275AD8FC000A8D51 /* MarvelResultCharacter.swift in Sources */,
 				ABC2AC7E275ACCEB000A8D51 /* AppDelegate.swift in Sources */,
 				ABC2ACB9275ACE89000A8D51 /* StringExtensions.swift in Sources */,
+				AB855678275B87FA00992B9D /* MarvelResultImage.swift in Sources */,
+				AB85567A275B963A00992B9D /* GeneralErrorResponse.swift in Sources */,
 				ABC2ACBA275ACE89000A8D51 /* MarvelClient.swift in Sources */,
 				ABC2ACB6275ACDE0000A8D51 /* SuperheroSquad.xcdatamodeld in Sources */,
 				ABC2AC80275ACCEB000A8D51 /* SceneDelegate.swift in Sources */,

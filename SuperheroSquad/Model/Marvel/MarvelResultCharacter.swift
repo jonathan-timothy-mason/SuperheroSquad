@@ -7,9 +7,9 @@
 
 import Foundation
 
-/// Part of JSON response object for Marvel API results.
+/// Character, part of JSON response object for Marvel API results.
 struct MarvelResultCharacter: Codable {
     let name: String
     let description: String
-    let thumbnail: Data
+    let thumbnail: MarvelResultImage
 }

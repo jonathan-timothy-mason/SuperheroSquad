@@ -16,6 +16,12 @@
 		ABC2AC95275ACCEC000A8D51 /* SuperheroSquadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2AC94275ACCEC000A8D51 /* SuperheroSquadTests.swift */; };
 		ABC2AC9F275ACCEC000A8D51 /* SuperheroSquadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2AC9E275ACCEC000A8D51 /* SuperheroSquadUITests.swift */; };
 		ABC2ACA1275ACCEC000A8D51 /* SuperheroSquadUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2ACA0275ACCEC000A8D51 /* SuperheroSquadUITestsLaunchTests.swift */; };
+		ABC2ACB6275ACDE0000A8D51 /* SuperheroSquad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABC2ACB4275ACDE0000A8D51 /* SuperheroSquad.xcdatamodeld */; };
+		ABC2ACB9275ACE89000A8D51 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2ACB7275ACE89000A8D51 /* StringExtensions.swift */; };
+		ABC2ACBA275ACE89000A8D51 /* MarvelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2ACB8275ACE89000A8D51 /* MarvelClient.swift */; };
+		ABC2ACBD275ACFD3000A8D51 /* MarvelErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2ACBB275ACFD3000A8D51 /* MarvelErrorResponse.swift */; };
+		ABC2ACBE275ACFD3000A8D51 /* MarvelResultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2ACBC275ACFD3000A8D51 /* MarvelResultResponse.swift */; };
+		ABC2ACC0275AD8FC000A8D51 /* MarvelResultCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2ACBF275AD8FC000A8D51 /* MarvelResultCharacter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		ABC2AC9A275ACCEC000A8D51 /* SuperheroSquadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperheroSquadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC2AC9E275ACCEC000A8D51 /* SuperheroSquadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroSquadUITests.swift; sourceTree = "<group>"; };
 		ABC2ACA0275ACCEC000A8D51 /* SuperheroSquadUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroSquadUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ABC2ACB5275ACDE0000A8D51 /* SuperheroSquad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SuperheroSquad.xcdatamodel; sourceTree = "<group>"; };
+		ABC2ACB7275ACE89000A8D51 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		ABC2ACB8275ACE89000A8D51 /* MarvelClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelClient.swift; sourceTree = "<group>"; };
+		ABC2ACBB275ACFD3000A8D51 /* MarvelErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelErrorResponse.swift; sourceTree = "<group>"; };
+		ABC2ACBC275ACFD3000A8D51 /* MarvelResultResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelResultResponse.swift; sourceTree = "<group>"; };
+		ABC2ACBF275AD8FC000A8D51 /* MarvelResultCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelResultCharacter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +111,11 @@
 		ABC2AC7C275ACCEB000A8D51 /* SuperheroSquad */ = {
 			isa = PBXGroup;
 			children = (
+				ABC2ACAF275ACD1F000A8D51 /* Model */,
+				ABC2ACAE275ACD0E000A8D51 /* View */,
+				ABC2ACAD275ACD01000A8D51 /* Controller */,
 				ABC2AC7D275ACCEB000A8D51 /* AppDelegate.swift */,
 				ABC2AC7F275ACCEB000A8D51 /* SceneDelegate.swift */,
-				ABC2AC81275ACCEB000A8D51 /* ViewController.swift */,
 				ABC2AC83275ACCEB000A8D51 /* Main.storyboard */,
 				ABC2AC86275ACCEC000A8D51 /* Assets.xcassets */,
 				ABC2AC88275ACCEC000A8D51 /* LaunchScreen.storyboard */,
@@ -125,6 +139,42 @@
 				ABC2ACA0275ACCEC000A8D51 /* SuperheroSquadUITestsLaunchTests.swift */,
 			);
 			path = SuperheroSquadUITests;
+			sourceTree = "<group>";
+		};
+		ABC2ACAD275ACD01000A8D51 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ABC2AC81275ACCEB000A8D51 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ABC2ACAE275ACD0E000A8D51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABC2ACAF275ACD1F000A8D51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ABC2ACB0275ACD2D000A8D51 /* Marvel */,
+				ABC2ACB4275ACDE0000A8D51 /* SuperheroSquad.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ABC2ACB0275ACD2D000A8D51 /* Marvel */ = {
+			isa = PBXGroup;
+			children = (
+				ABC2ACB8275ACE89000A8D51 /* MarvelClient.swift */,
+				ABC2ACBC275ACFD3000A8D51 /* MarvelResultResponse.swift */,
+				ABC2ACBF275AD8FC000A8D51 /* MarvelResultCharacter.swift */,
+				ABC2ACBB275ACFD3000A8D51 /* MarvelErrorResponse.swift */,
+				ABC2ACB7275ACE89000A8D51 /* StringExtensions.swift */,
+			);
+			path = Marvel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +309,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABC2AC82275ACCEB000A8D51 /* ViewController.swift in Sources */,
+				ABC2ACBE275ACFD3000A8D51 /* MarvelResultResponse.swift in Sources */,
+				ABC2ACC0275AD8FC000A8D51 /* MarvelResultCharacter.swift in Sources */,
 				ABC2AC7E275ACCEB000A8D51 /* AppDelegate.swift in Sources */,
+				ABC2ACB9275ACE89000A8D51 /* StringExtensions.swift in Sources */,
+				ABC2ACBA275ACE89000A8D51 /* MarvelClient.swift in Sources */,
+				ABC2ACB6275ACDE0000A8D51 /* SuperheroSquad.xcdatamodeld in Sources */,
 				ABC2AC80275ACCEB000A8D51 /* SceneDelegate.swift in Sources */,
+				ABC2ACBD275ACFD3000A8D51 /* MarvelErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +503,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -475,6 +532,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -624,6 +682,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ABC2ACB4275ACDE0000A8D51 /* SuperheroSquad.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ABC2ACB5275ACDE0000A8D51 /* SuperheroSquad.xcdatamodel */,
+			);
+			currentVersion = ABC2ACB5275ACDE0000A8D51 /* SuperheroSquad.xcdatamodel */;
+			path = SuperheroSquad.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ABC2AC72275ACCEB000A8D51 /* Project object */;
 }

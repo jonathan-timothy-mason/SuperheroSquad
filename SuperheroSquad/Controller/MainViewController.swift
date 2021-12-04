@@ -10,14 +10,25 @@ import UIKit
 class MainViewController: UIViewController {
     
     var squad: [SquadMember] = []
+    var characters: [Character] = []
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        // Create new birdcall.
+        // From "Code for Collection View Flow Layout" of "Lesson 8: Complete
+        // the MemeMe App".
+        // Size cells according to screen size.
+        let space: CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        
+        // Create temp squad.
         let temp1 = DataController.shared.createSquadMember()
         temp1.name = "Superman"
         temp1.photo = UIImage(named: "test")?.pngData()
@@ -38,6 +49,11 @@ class MainViewController: UIViewController {
         squad.append(temp3)
         squad.append(temp4)
         squad.append(temp5)
+        
+        // Create temp characters.
+        for _ in 1...100 {
+            characters.append(Character(name: "Dad", bio: "What a guy!", photoURL: nil, photo: UIImage(named: "test")))
+        }
     }
 }
 

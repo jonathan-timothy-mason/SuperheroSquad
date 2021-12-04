@@ -27,7 +27,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             cell.photo.image = UIImage(data: photo)
         }
         else {
-            cell.photo.image = UIImage(systemName: "questionmark.circle.fill") // Default
+            cell.photo.image = UIImage(systemName: Character.defaultSystemImageName)
         }
         
         return cell

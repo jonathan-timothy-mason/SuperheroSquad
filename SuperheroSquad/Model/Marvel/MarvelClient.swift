@@ -41,10 +41,11 @@ class MarvelClient {
     /// Send GET request to retrieve characters from Marvel API.
     /// - Parameters:
     ///   - completion: Function to call upon completion.
-    static func getCharacters(completion: @escaping ([MarvelResultCharacter], Error?) -> Void) {
+    static func getCharacters(completion: @escaping ([Character], Error?) -> Void) {
         taskForMarvelGetRequest(url: Endpoints.getCharacters.url, marvelResultType: MarvelResultCharacter.self) { response, error in
             if let response = response {
-                completion(response.data.results, nil)
+                let characters = response.data.results.map { Character($0) } // Convert to characters.
+                completion(characters, nil)
             }
             else {
                 completion([], error)

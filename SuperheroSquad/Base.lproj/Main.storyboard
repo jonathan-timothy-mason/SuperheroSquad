@@ -89,15 +89,37 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3tY-5v-E7F">
-                                        <rect key="frame" x="68" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewCharacterCell" id="3tY-5v-E7F" customClass="NewCharacterCell" customModule="SuperheroSquad" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UXy-7g-Rgs">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="32b-vk-piZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="0Kn-uy-dQ9"/>
+                                                        <constraint firstAttribute="width" constant="100" id="nsE-YS-HVu"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="32b-vk-piZ" firstAttribute="top" secondItem="UXy-7g-Rgs" secondAttribute="top" id="3C4-fn-Cy7"/>
+                                                <constraint firstItem="32b-vk-piZ" firstAttribute="leading" secondItem="UXy-7g-Rgs" secondAttribute="leading" id="AQf-nN-pcT"/>
+                                                <constraint firstAttribute="bottom" secondItem="32b-vk-piZ" secondAttribute="bottom" id="FXm-I2-jwh"/>
+                                                <constraint firstAttribute="trailing" secondItem="32b-vk-piZ" secondAttribute="trailing" id="KAE-cT-Avg"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="photo" destination="32b-vk-piZ" id="kzi-UM-qqh"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="z7W-FS-jLE"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="muM-Pk-PTF"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Squad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTD-9T-TQx">
                                 <rect key="frame" x="0.0" y="44" width="150" height="50"/>
@@ -126,6 +148,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="TV1-Ca-jwT" id="mX0-ws-tby"/>
+                        <outlet property="flowLayout" destination="El5-Wj-qe8" id="hrG-xN-B9N"/>
                         <outlet property="tableView" destination="T7K-4f-88F" id="Yz5-uR-Vam"/>
                     </connections>
                 </viewController>

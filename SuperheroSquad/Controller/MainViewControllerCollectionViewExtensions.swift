@@ -21,7 +21,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 
         // Get corresponding character.
         let character = characters[indexPath.row]
-        if let photo = character.photo {
+        if let photo = character.smallPhoto {
             // Image has been downloaded, so set it.
             cell.photo.image = photo
         }
@@ -30,10 +30,10 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.photo.image = UIImage(systemName: Character.defaultSystemImageName)
             
             // And download image.
-            if let photoURL = character.photoURL {
+            if let photoURL = character.smallPhotoURL {
                 MarvelClient.getPhoto(photoURL: photoURL) { image, error in
                     if let image = image {
-                        character.photo = image
+                        character.smallPhoto = image
                         cell.photo.image = image // Update image in cell.
                     }
                 }

@@ -18,6 +18,8 @@ class MarvelClient {
         static let apiPrivateKey = "78ecea7b5cb58088d72e4c34b3e3406b6054c5e9"
         static let appStartDate = Date()
         static let imageNotFoundFielname = "image_not_available"
+        static let thumbnailVariant = "standard_medium"
+        static let mainImageVariant = "standard_xlarge"
 
         case getCharacters(Int)
         
@@ -28,7 +30,7 @@ class MarvelClient {
             case .getCharacters(let numberDownloaded):
                 let ts = String(Int(Endpoints.appStartDate.timeIntervalSinceNow))
                 let hash = (ts + Endpoints.apiPrivateKey + Endpoints.apiPublicKey).toMD5()
-                return "\(Endpoints.baseURL)/characters?ts=\(ts)&apikey=\(Endpoints.apiPublicKey)&hash=\(hash)&limit=10&offset=\(numberDownloaded)"
+                return "\(Endpoints.baseURL)/characters?ts=\(ts)&apikey=\(Endpoints.apiPublicKey)&hash=\(hash)&limit=50&offset=\(numberDownloaded)"
             }
         }
         

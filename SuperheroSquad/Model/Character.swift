@@ -23,7 +23,8 @@ class Character {
     init(_ marvelResultCharacter: MarvelResultCharacter) {
         name = marvelResultCharacter.name
         bio = marvelResultCharacter.description
-        photoURL = URL(string: "\(marvelResultCharacter.thumbnail.path).\(marvelResultCharacter.thumbnail.ext)")
+        smallPhotoURL = URL(string: "\(marvelResultCharacter.thumbnail.path)/\(MarvelClient.Endpoints.thumbnailVariant).\(marvelResultCharacter.thumbnail.ext)")
+        bigPhotoURL = URL(string: "\(marvelResultCharacter.thumbnail.path)/\(MarvelClient.Endpoints.mainImageVariant).\(marvelResultCharacter.thumbnail.ext)")
     }
     
     /// Name of character.
@@ -32,9 +33,15 @@ class Character {
     /// Description of character.
     var bio: String
     
-    /// URL of photo of character.
-    var photoURL: URL?
+    /// URL of small image of character.
+    var smallPhotoURL: URL?
     
-    /// Image of character, if downloaded.
-    var photo: UIImage?
+    /// URL of big image of character.
+    var bigPhotoURL: URL?
+    
+    /// Small image of character, if downloaded.
+    var smallPhoto: UIImage?
+    
+    /// Big image if character,, if downloaded.
+    var bigPhoto: UIImage?
 }

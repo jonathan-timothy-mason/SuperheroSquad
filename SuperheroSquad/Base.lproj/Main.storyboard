@@ -89,18 +89,18 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewCharacterCell" id="3tY-5v-E7F" customClass="NewCharacterCell" customModule="SuperheroSquad" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UXy-7g-Rgs">
-                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="32b-vk-piZ">
-                                                    <rect key="frame" x="0.0" y="0.5" width="75" height="74"/>
+                                                    <rect key="frame" x="0.0" y="0.5" width="100" height="99"/>
                                                     <color key="tintColor" systemColor="systemGray5Color"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="75" id="0Kn-uy-dQ9"/>
-                                                        <constraint firstAttribute="width" constant="75" id="nsE-YS-HVu"/>
+                                                        <constraint firstAttribute="height" constant="100" id="0Kn-uy-dQ9"/>
+                                                        <constraint firstAttribute="width" constant="100" id="nsE-YS-HVu"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>

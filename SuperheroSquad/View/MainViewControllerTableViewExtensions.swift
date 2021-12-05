@@ -34,11 +34,20 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Handle press of item to display details of selected birdcall.
-        //let detailsViewController = self.storyboard!.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-        //detailsViewController.birdcall = birdcalls[(indexPath as NSIndexPath).row]
-        //detailsViewController.hidesBottomBarWhenPushed = true // Prevent tabs showing in new screen.
-        //navigationController!.pushViewController(detailsViewController, animated: true)
+        // Show review screen and allow option to fire character from squad.
+        let reviewViewController = self.storyboard!.instantiateViewController(withIdentifier: "ReviewViewController") as! ReviewViewController
+
+        // Pass required parameters.
+        let character = Character(squad[indexPath.row])
+        reviewViewController.character = character
+        reviewViewController.question = "Fire?"
+        reviewViewController.yesCompletionHandler = {
+            // Fire character from squad.
+            // ...
+        }
+        
+        // Show screen.
+        self.present(reviewViewController, animated: true)
     }
 
 }

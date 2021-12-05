@@ -18,13 +18,23 @@ class Character {
         bio = ""       
     }
     
-    /// Initialise from Marvel API results character..
+    /// Initialise from Marvel API results character.
     /// - Parameter marvelResultCharacter: Marvel API results character.
     init(_ marvelResultCharacter: MarvelResultCharacter) {
         name = marvelResultCharacter.name
         bio = marvelResultCharacter.description
         smallPhotoURL = URL(string: "\(marvelResultCharacter.thumbnail.path)/\(MarvelClient.Endpoints.thumbnailVariant).\(marvelResultCharacter.thumbnail.ext)")
         bigPhotoURL = URL(string: "\(marvelResultCharacter.thumbnail.path)/\(MarvelClient.Endpoints.mainImageVariant).\(marvelResultCharacter.thumbnail.ext)")
+    }
+    
+    /// Initialise from date store squad member.
+    /// - Parameter squadMember: Data store squad member.
+    init(_ squadMember: SquadMember) {
+        name = squadMember.name!
+        bio = squadMember.bio!
+        if let photo = squadMember.photo {
+            bigPhoto = UIImage(data: photo)
+        }
     }
     
     /// Name of character.

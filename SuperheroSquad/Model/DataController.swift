@@ -33,7 +33,7 @@ class DataController {
     func loadSquad() -> [SquadMember] {
         
         let fetchRequest = SquadMember.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: false)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         do {
             return try viewContext.fetch(fetchRequest)
         }
@@ -50,16 +50,5 @@ class DataController {
         catch {
             fatalError(error.localizedDescription)
         }
-    }
-    
-    /// Create new squad member for adding to data store.
-    func createSquadMember() -> SquadMember {
-        return SquadMember(context: viewContext)
-    }
-    
-    /// Delete squad member from data store.
-    func deleteSquadMember(squadMember: SquadMember) {
-        viewContext.delete(squadMember)
-        saveDataStore()
     }
 }

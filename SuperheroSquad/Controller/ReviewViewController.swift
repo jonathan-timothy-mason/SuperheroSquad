@@ -12,6 +12,7 @@ import UIKit
 class ReviewViewController: UIViewController {
     var character: Character?
     var question: String?
+    var yesIsEnabled = true
     var yesCompletionHandler: (() -> Void)?
     
     @IBOutlet weak var questionLabel: UILabel!
@@ -19,6 +20,7 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var yesButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,7 @@ class ReviewViewController: UIViewController {
         questionLabel.text = question
         bioLabel.text = character.bio.count > 0 ? character.bio : "Bio unavailable."
         nameLabel.text = character.name.count > 0 ? character.name : "Unknown"
+        yesButton.isEnabled = yesIsEnabled
     
         // Load main photo of character.
         loadMainPhoto()

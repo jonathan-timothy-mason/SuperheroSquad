@@ -201,13 +201,13 @@
                                 <rect key="frame" x="291" y="716" width="113" height="56"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="x.circle.fill" catalog="system">
+                                <buttonConfiguration key="configuration" style="plain" image="xmark.circle.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="35"/>
                                     <attributedString key="attributedTitle">
                                         <fragment content="No">
                                             <attributes>
                                                 <font key="NSFont" size="24" name="Helvetica-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="6" tighteningFactorForTruncation="0.0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="6" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -226,7 +226,7 @@
                                         <fragment content="Yes">
                                             <attributes>
                                                 <font key="NSFont" size="24" name="Helvetica-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="6" tighteningFactorForTruncation="0.0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="6" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -300,6 +300,7 @@
                         <outlet property="nameLabel" destination="1nL-6j-p0a" id="JUQ-5b-QSf"/>
                         <outlet property="photoImageView" destination="wUw-D9-qc0" id="pXQ-g9-g6g"/>
                         <outlet property="questionLabel" destination="GhA-il-xHe" id="2AF-Zk-KPh"/>
+                        <outlet property="yesButton" destination="cAz-BF-91l" id="kuK-ZY-bKU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32r-7T-kRQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -310,7 +311,7 @@
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="questionmark.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="x.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

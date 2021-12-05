@@ -38,16 +38,16 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         let reviewViewController = self.storyboard!.instantiateViewController(withIdentifier: "ReviewViewController") as! ReviewViewController
 
         // Pass required parameters.
-        let character = Character(squad[indexPath.row])
+        let squadMember = squad[indexPath.row]
+        let character = Character(squadMember) // Convert from SquadMember to Character for Review screen.
         reviewViewController.character = character
         reviewViewController.question = "Fire?"
         reviewViewController.yesCompletionHandler = {
-            // Fire character from squad.
-            // ...
+            SquadMember.fireFromToSquad(squadMember: squadMember)
+            self.loadSquad()
         }
         
         // Show screen.
         self.present(reviewViewController, animated: true)
     }
-
 }

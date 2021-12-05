@@ -29,40 +29,14 @@ class MainViewController: UIViewController {
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
-        
-        createTestSquad()
-        
+
         // Load squad from data store.
-        //loadSquad()
+        loadSquad()
         
         // Load characters from Marvel API.
         loadCharacters()
     }
-    
-    /// Create temp squad.
-    func createTestSquad() {
-        let temp1 = DataController.shared.createSquadMember()
-        temp1.name = "Superman"
-        temp1.photo = UIImage(named: "test")?.pngData()
-        let temp2 = DataController.shared.createSquadMember()
-        temp2.name = "Batman"
-        temp2.photo = nil
-        let temp3 = DataController.shared.createSquadMember()
-        temp3.name = "Spiderman"
-        temp3.photo = UIImage(named: "test")?.pngData()
-        let temp4 = DataController.shared.createSquadMember()
-        temp4.name = "Dad"
-        temp4.photo = UIImage(named: "test")?.pngData()
-        let temp5 = DataController.shared.createSquadMember()
-        temp5.name = "The Incredible Hulk"
-        temp5.photo = nil
-        squad.append(temp1)
-        squad.append(temp2)
-        squad.append(temp3)
-        //squad.append(temp4)
-        //squad.append(temp5)
-    }
-    
+
     /// Load squad from data store.
     func loadSquad() {
         squad = DataController.shared.loadSquad()

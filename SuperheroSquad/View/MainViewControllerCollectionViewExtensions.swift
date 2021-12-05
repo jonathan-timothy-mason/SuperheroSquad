@@ -51,9 +51,10 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let character = characters[indexPath.row]
         reviewViewController.character = character
         reviewViewController.question = "Recruit?"
+        reviewViewController.yesIsEnabled = squad.canRecruite(character: character)
         reviewViewController.yesCompletionHandler = {
-            // Recruit character to squad.
-            // ...
+            SquadMember.recruitToSquad(character: character)
+            self.loadSquad()
         }
         
         // Show screen.

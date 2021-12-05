@@ -36,7 +36,8 @@ class ReviewViewController: UIViewController {
         questionLabel.text = question
         bioLabel.text = character.bio.count > 0 ? character.bio : "Bio unavailable."
         nameLabel.text = character.name.count > 0 ? character.name : "Unknown"
-        
+    
+        // Load main photo of character.
         loadMainPhoto()
     }
     
@@ -69,12 +70,14 @@ class ReviewViewController: UIViewController {
     /// Indicate activity while photo is being downloaded.
     func startIndicatingActivity() {
         activityIndicator.startAnimating()
+        bioLabel.isHidden = true
         photoImageView.isHidden = true
     }
     
     /// Stop indicating activity.
     func stopIndicatingActivity() {
         activityIndicator.stopAnimating()
+        bioLabel.isHidden = false
         photoImageView.isHidden = false
     }
     

@@ -10,6 +10,7 @@
 		AB73B4AA275BCFA60061F7C0 /* MainViewControllerCollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73B4A9275BCFA60061F7C0 /* MainViewControllerCollectionViewExtensions.swift */; };
 		AB73B4AE275BD33D0061F7C0 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73B4AD275BD33D0061F7C0 /* Character.swift */; };
 		AB73B4B0275BDF960061F7C0 /* NewCharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73B4AF275BDF960061F7C0 /* NewCharacterCell.swift */; };
+		AB73B4B2275C078F0061F7C0 /* ControllerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73B4B1275C078F0061F7C0 /* ControllerHelpers.swift */; };
 		AB855678275B87FA00992B9D /* MarvelResultImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB855677275B87FA00992B9D /* MarvelResultImage.swift */; };
 		AB85567A275B963A00992B9D /* GeneralErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB855679275B963A00992B9D /* GeneralErrorResponse.swift */; };
 		AB85567C275BB24500992B9D /* MainViewControllerTableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB85567B275BB24500992B9D /* MainViewControllerTableViewExtensions.swift */; };
@@ -53,6 +54,7 @@
 		AB73B4A9275BCFA60061F7C0 /* MainViewControllerCollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerCollectionViewExtensions.swift; sourceTree = "<group>"; };
 		AB73B4AD275BD33D0061F7C0 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		AB73B4AF275BDF960061F7C0 /* NewCharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCharacterCell.swift; sourceTree = "<group>"; };
+		AB73B4B1275C078F0061F7C0 /* ControllerHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerHelpers.swift; sourceTree = "<group>"; };
 		AB855677275B87FA00992B9D /* MarvelResultImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelResultImage.swift; sourceTree = "<group>"; };
 		AB855679275B963A00992B9D /* GeneralErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralErrorResponse.swift; sourceTree = "<group>"; };
 		AB85567B275BB24500992B9D /* MainViewControllerTableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTableViewExtensions.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				AB85567D275BB46D00992B9D /* SquadMemberCell.swift */,
 				AB73B4A9275BCFA60061F7C0 /* MainViewControllerCollectionViewExtensions.swift */,
 				AB73B4AF275BDF960061F7C0 /* NewCharacterCell.swift */,
+				AB73B4B1275C078F0061F7C0 /* ControllerHelpers.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				ABC2ACC0275AD8FC000A8D51 /* MarvelResultCharacter.swift in Sources */,
 				AB73B4AA275BCFA60061F7C0 /* MainViewControllerCollectionViewExtensions.swift in Sources */,
 				AB85567E275BB46D00992B9D /* SquadMemberCell.swift in Sources */,
+				AB73B4B2275C078F0061F7C0 /* ControllerHelpers.swift in Sources */,
 				ABC2AC7E275ACCEB000A8D51 /* AppDelegate.swift in Sources */,
 				ABC2ACB9275ACE89000A8D51 /* StringExtensions.swift in Sources */,
 				AB73B4AE275BD33D0061F7C0 /* Character.swift in Sources */,

@@ -30,13 +30,20 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.photo.image = UIImage(systemName: Character.defaultSystemImageName)
             
             // And download image.
-            // ...
+            if let photoURL = character.photoURL {
+                MarvelClient.getPhoto(photoURL: photoURL) { image, error in
+                    if let image = image {
+                        character.photo = image
+                        cell.photo.image = image // Update image in cell.
+                    }
+                }
+            }
         }
 
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath:IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         
     }

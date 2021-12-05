@@ -17,17 +17,18 @@ class MarvelClient {
         static let apiPublicKey = "31191f798942cbab6151dd3983736b13"
         static let apiPrivateKey = "78ecea7b5cb58088d72e4c34b3e3406b6054c5e9"
         static let appStartDate = Date()
+        static let imageNotFoundFielname = "image_not_available"
 
-        case getCharacters
+        case getCharacters(Int)
         
         /// Construct endpoint according to current case.
         /// - Returns: Endpoint URL as string.
         func constructURL() -> String {
             switch(self) {
-            case .getCharacters:
+            case .getCharacters(let numberDownloaded):
                 let ts = String(Int(Endpoints.appStartDate.timeIntervalSinceNow))
                 let hash = (ts + Endpoints.apiPrivateKey + Endpoints.apiPublicKey).toMD5()
-                return "\(Endpoints.baseURL)/characters?ts=\(ts)&apikey=\(Endpoints.apiPublicKey)&hash=\(hash)&limit=100"
+                return "\(Endpoints.baseURL)/characters?ts=\(ts)&apikey=\(Endpoints.apiPublicKey)&hash=\(hash)&limit=10&offset=\(numberDownloaded)"
             }
         }
         
@@ -40,15 +41,16 @@ class MarvelClient {
     
     /// Send GET request to retrieve characters from Marvel API.
     /// - Parameters:
+    ///   - numberDownloaded: Number of characters already downloaded.
     ///   - completion: Function to call upon completion.
-    static func getCharacters(completion: @escaping ([Character], Error?) -> Void) {
-        taskForMarvelGetRequest(url: Endpoints.getCharacters.url, marvelResultType: MarvelResultCharacter.self) { response, error in
+    static func getCharacters(numberDownloaded: Int, completion: @escaping ([Character], Int, Error?) -> Void) {
+        taskForMarvelGetRequest(url: Endpoints.getCharacters(numberDownloaded).url, marvelResultType: MarvelResultCharacter.self) { response, error in
             if let response = response {
                 let characters = response.data.results.map { Character($0) } // Convert to characters.
-                completion(characters, nil)
+                completion(characters, response.data.total, nil)
             }
             else {
-                completion([], error)
+                completion([], -1, error)
             }
         }
     }
@@ -59,7 +61,6 @@ class MarvelClient {
     ///   - marvelResultType: Type of Marvel result data.
     ///   - completion: Function to call upon completion.
     static func taskForMarvelGetRequest<T: Decodable>(url: URL, marvelResultType: T.Type, completion: @escaping (MarvelResultResponse<T>?, Error?) -> Void) {
-        
         print(url)
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -101,6 +102,29 @@ class MarvelClient {
                         }
                     }
                 }
+            }
+        }
+        task.resume()
+    }
+    
+    /// Send GET request to download photo from Marvel API.
+    /// - Parameters:
+    ///   - photoURL: URL of photo.
+    ///   - completion: Function to call upon completion.
+    class func getPhoto(photoURL: URL, completion: @escaping (UIImage?, Error?) -> Void) {
+        print(photoURL)
+
+        let task = URLSession.shared.dataTask(with: photoURL) { data, response, error in
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+                return
+            }
+            
+            DispatchQueue.main.async {
+                let image = UIImage(data: data)
+                completion(image, error)
             }
         }
         task.resume()

@@ -16,6 +16,7 @@
 		AB85567C275BB24500992B9D /* MainViewControllerTableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB85567B275BB24500992B9D /* MainViewControllerTableViewExtensions.swift */; };
 		AB85567E275BB46D00992B9D /* SquadMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB85567D275BB46D00992B9D /* SquadMemberCell.swift */; };
 		AB855680275BB90900992B9D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB85567F275BB90900992B9D /* DataController.swift */; };
+		AB857D82275CE14100920D05 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB857D81275CE14100920D05 /* ReviewViewController.swift */; };
 		ABC2AC7E275ACCEB000A8D51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2AC7D275ACCEB000A8D51 /* AppDelegate.swift */; };
 		ABC2AC80275ACCEB000A8D51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2AC7F275ACCEB000A8D51 /* SceneDelegate.swift */; };
 		ABC2AC82275ACCEB000A8D51 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2AC81275ACCEB000A8D51 /* MainViewController.swift */; };
@@ -60,6 +61,7 @@
 		AB85567B275BB24500992B9D /* MainViewControllerTableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTableViewExtensions.swift; sourceTree = "<group>"; };
 		AB85567D275BB46D00992B9D /* SquadMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadMemberCell.swift; sourceTree = "<group>"; };
 		AB85567F275BB90900992B9D /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataController.swift; path = SuperheroSquad/Model/DataController.swift; sourceTree = SOURCE_ROOT; };
+		AB857D81275CE14100920D05 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		ABC2AC7A275ACCEB000A8D51 /* SuperheroSquad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperheroSquad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC2AC7D275ACCEB000A8D51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABC2AC7F275ACCEB000A8D51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,10 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				ABC2AC81275ACCEB000A8D51 /* MainViewController.swift */,
-				AB85567B275BB24500992B9D /* MainViewControllerTableViewExtensions.swift */,
-				AB85567D275BB46D00992B9D /* SquadMemberCell.swift */,
-				AB73B4A9275BCFA60061F7C0 /* MainViewControllerCollectionViewExtensions.swift */,
-				AB73B4AF275BDF960061F7C0 /* NewCharacterCell.swift */,
+				AB857D81275CE14100920D05 /* ReviewViewController.swift */,
 				AB73B4B1275C078F0061F7C0 /* ControllerHelpers.swift */,
 			);
 			path = Controller;
@@ -175,6 +174,10 @@
 		ABC2ACAE275ACD0E000A8D51 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB85567B275BB24500992B9D /* MainViewControllerTableViewExtensions.swift */,
+				AB85567D275BB46D00992B9D /* SquadMemberCell.swift */,
+				AB73B4A9275BCFA60061F7C0 /* MainViewControllerCollectionViewExtensions.swift */,
+				AB73B4AF275BDF960061F7C0 /* NewCharacterCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB857D82275CE14100920D05 /* ReviewViewController.swift in Sources */,
 				ABC2AC82275ACCEB000A8D51 /* MainViewController.swift in Sources */,
 				ABC2ACBE275ACFD3000A8D51 /* MarvelResultResponse.swift in Sources */,
 				ABC2ACC0275AD8FC000A8D51 /* MarvelResultCharacter.swift in Sources */,

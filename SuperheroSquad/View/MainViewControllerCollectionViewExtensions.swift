@@ -33,7 +33,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             if let photoURL = character.smallPhotoURL {
                 MarvelClient.getPhoto(photoURL: photoURL) { image, error in
                     if let image = image {
-                        character.smallPhoto = image
+                        character.smallPhoto = image // Cache image in character.
                         cell.photo.image = image // Update image in cell.
                     }
                 }
@@ -44,7 +44,19 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Show review screen and allow option to recruit character to squad.
+        let reviewViewController = self.storyboard!.instantiateViewController(withIdentifier: "ReviewViewController") as! ReviewViewController
+
+        // Pass required parameters.
+        let character = characters[indexPath.row]
+        reviewViewController.character = character
+        reviewViewController.question = "Recruit?"
+        reviewViewController.yesCompletionHandler = {
+            // Recruit character to squad.
+            // ...
+        }
         
-        
+        // Show screen.
+        self.present(reviewViewController, animated: true)
     }
 }

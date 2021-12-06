@@ -128,8 +128,8 @@
 				AB8CBD49275E42AE002B189D /* DataControllerProtocol.swift */,
 				AB85567F275BB90900992B9D /* DataController.swift */,
 				AB8CBD46275E3BAE002B189D /* SquadMemberProtocol.swift */,
-				AB8CBD4B275E550C002B189D /* SquadMemberProtocolExtension.swift */,
 				ABA03E1C275D6FA900505B1A /* SquadMemberExtension.swift */,
+				AB8CBD4B275E550C002B189D /* SquadMemberProtocolExtension.swift */,
 				ABC2ACB4275ACDE0000A8D51 /* SuperheroSquad.xcdatamodeld */,
 			);
 			path = CoreData;

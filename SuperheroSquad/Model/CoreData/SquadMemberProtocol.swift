@@ -7,7 +7,8 @@
 
 import Foundation
 
-/// SquadMember protocol to allow dependency injection.
+/// Protocol to be implemented by SquadMember.
+/// - Note: Core Data attibutes named more obscurely, whilst protocol provides main access to SquadMember for app. This allows TestSquadMember to be injected during testing.
 protocol SquadMemberProtocol {
     /// Name of squad member.
     var name: String? { get set }

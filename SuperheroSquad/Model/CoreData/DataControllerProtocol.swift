@@ -7,7 +7,8 @@
 
 import Foundation
 
-/// DataController protocol to allow dependency injection.
+/// Protocol to be implemented by DataController.
+/// - Note: Protocol provides main access to DataContoller for app. This allows TestDataContoller to be injected during testing.
 protocol DataControllerProtocol {
     /// Load data store.
     func loadDataStore()

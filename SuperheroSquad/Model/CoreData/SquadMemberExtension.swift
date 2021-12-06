@@ -7,7 +7,6 @@
 
 import Foundation
 
-/// SquadMember extension for squad actions.
 extension SquadMember: SquadMemberProtocol {
     var name: String? {
         set { colName = newValue }

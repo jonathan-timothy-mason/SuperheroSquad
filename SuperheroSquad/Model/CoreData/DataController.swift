@@ -8,11 +8,8 @@
 import Foundation
 import CoreData
 
-/// Helper for using data store.
-/// Based on "What Is a Singleton and How To Create One In Swift" by Bart Jacobs:
-/// https://cocoacasts.com/what-is-a-singleton-and-how-to-create-one-in-swift/
 class DataController: DataControllerProtocol {
-    static var shared = DataController()
+    static var shared: DataControllerProtocol = DataController()
     let persistentContainer = NSPersistentContainer(name: "SuperheroSquad")
     
     /// Context for accessing data store for main thread.

@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    var squad: [SquadMember] = []
+    var squad: [SquadMemberProtocol] = []
     var characters: [Character] = []
 
     @IBOutlet weak var tableView: UITableView!

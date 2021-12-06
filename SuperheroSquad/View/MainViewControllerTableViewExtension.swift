@@ -1,5 +1,5 @@
 //
-//  MainViewControllerTableViewExtensions.swift
+//  MainViewControllerTableViewExtension.swift
 //  SuperheroSquad
 //
 //  Created by Jonathan Mason on 04/12/2021.
@@ -43,7 +43,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         reviewViewController.character = character
         reviewViewController.question = "Fire?"
         reviewViewController.yesCompletionHandler = {
-            SquadMember.fireFromToSquad(squadMember: squadMember)
+            DataController.shared.fireFromToSquad(squadMember: squadMember)
             self.loadSquad()
         }
         

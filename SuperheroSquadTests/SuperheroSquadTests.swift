@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import SuperheroSquad
 
 class SuperheroSquadTests: XCTestCase {
 
@@ -29,5 +28,4 @@ class SuperheroSquadTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

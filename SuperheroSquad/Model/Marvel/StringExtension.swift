@@ -1,5 +1,5 @@
 //
-//  StringExtensions.swift
+//  StringExtension.swift
 //  SuperHeroSquad
 //
 //  Created by Jonathan Mason on 03/12/2021.

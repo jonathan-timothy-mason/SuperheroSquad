@@ -12,10 +12,16 @@ import UIKit
 class Character {
     static let defaultSystemImageName = "questionmark.circle.fill"
     
-    /// Initialise an empty placeholder character.
+    /// Initialise empty placeholder character.
     init() {
         name = "placeholder"
         bio = ""       
+    }
+    
+    /// Initialise test character.
+    init(name: String, bio: String) {
+        self.name = name
+        self.bio = bio
     }
     
     /// Initialise from Marvel API results character.
@@ -29,7 +35,7 @@ class Character {
     
     /// Initialise from date store squad member.
     /// - Parameter squadMember: Data store squad member.
-    init(_ squadMember: SquadMember) {
+    init(_ squadMember: SquadMemberProtocol) {
         name = squadMember.name!
         bio = squadMember.bio!
         if let photo = squadMember.photo {

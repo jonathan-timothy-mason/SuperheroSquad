@@ -1,5 +1,5 @@
 //
-//  MainViewControllerCollectionViewExtensions.swift
+//  MainViewControllerCollectionViewExtension.swift
 //  SuperheroSquad
 //
 //  Created by Jonathan Mason on 04/12/2021.
@@ -53,7 +53,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         reviewViewController.question = "Recruit?"
         reviewViewController.yesIsEnabled = squad.canRecruite(character: character)
         reviewViewController.yesCompletionHandler = {
-            SquadMember.recruitToSquad(character: character)
+            DataController.shared.recruitToSquad(character: character)
             self.loadSquad()
         }
         

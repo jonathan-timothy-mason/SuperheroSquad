@@ -21,8 +21,10 @@
 		AB8CBD4A275E42AE002B189D /* DataControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CBD49275E42AE002B189D /* DataControllerProtocol.swift */; };
 		AB8CBD4C275E550C002B189D /* SquadMemberProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CBD4B275E550C002B189D /* SquadMemberProtocolExtension.swift */; };
 		AB8CBD4E275E56A6002B189D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CBD4D275E56A6002B189D /* Constants.swift */; };
-		AB8CBD50275E5A85002B189D /* TestSquadMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CBD4F275E5A85002B189D /* TestSquadMember.swift */; };
 		AB8CBD52275E6302002B189D /* CanRecruitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CBD51275E6302002B189D /* CanRecruitTests.swift */; };
+		AB8CBD54275E6B7F002B189D /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CBD53275E6B7F002B189D /* MainViewControllerTests.swift */; };
+		AB8CBD62275E7EFA002B189D /* TestDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CBD5E275E75CF002B189D /* TestDataController.swift */; };
+		AB8CBD63275E7EFD002B189D /* TestSquadMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CBD5C275E758A002B189D /* TestSquadMember.swift */; };
 		ABA03E1D275D6FA900505B1A /* SquadMemberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA03E1C275D6FA900505B1A /* SquadMemberExtension.swift */; };
 		ABC2AC7E275ACCEB000A8D51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2AC7D275ACCEB000A8D51 /* AppDelegate.swift */; };
 		ABC2AC80275ACCEB000A8D51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2AC7F275ACCEB000A8D51 /* SceneDelegate.swift */; };
@@ -73,8 +75,10 @@
 		AB8CBD49275E42AE002B189D /* DataControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerProtocol.swift; sourceTree = "<group>"; };
 		AB8CBD4B275E550C002B189D /* SquadMemberProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadMemberProtocolExtension.swift; sourceTree = "<group>"; };
 		AB8CBD4D275E56A6002B189D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		AB8CBD4F275E5A85002B189D /* TestSquadMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSquadMember.swift; sourceTree = "<group>"; };
 		AB8CBD51275E6302002B189D /* CanRecruitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanRecruitTests.swift; sourceTree = "<group>"; };
+		AB8CBD53275E6B7F002B189D /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
+		AB8CBD5C275E758A002B189D /* TestSquadMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSquadMember.swift; sourceTree = "<group>"; };
+		AB8CBD5E275E75CF002B189D /* TestDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataController.swift; sourceTree = "<group>"; };
 		ABA03E1C275D6FA900505B1A /* SquadMemberExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadMemberExtension.swift; sourceTree = "<group>"; };
 		ABC2AC7A275ACCEB000A8D51 /* SuperheroSquad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperheroSquad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC2AC7D275ACCEB000A8D51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +139,15 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		AB8CBD64275E7F5A002B189D /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				AB8CBD5C275E758A002B189D /* TestSquadMember.swift */,
+				AB8CBD5E275E75CF002B189D /* TestDataController.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		ABC2AC71275ACCEB000A8D51 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +181,7 @@
 				ABC2AC86275ACCEC000A8D51 /* Assets.xcassets */,
 				ABC2AC88275ACCEC000A8D51 /* LaunchScreen.storyboard */,
 				ABC2AC8B275ACCEC000A8D51 /* Info.plist */,
+				AB8CBD64275E7F5A002B189D /* Test */,
 			);
 			path = SuperheroSquad;
 			sourceTree = "<group>";
@@ -175,7 +189,6 @@
 		ABC2AC93275ACCEC000A8D51 /* SuperheroSquadTests */ = {
 			isa = PBXGroup;
 			children = (
-				AB8CBD4F275E5A85002B189D /* TestSquadMember.swift */,
 				AB8CBD51275E6302002B189D /* CanRecruitTests.swift */,
 				ABC2AC94275ACCEC000A8D51 /* SuperheroSquadTests.swift */,
 			);
@@ -185,6 +198,7 @@
 		ABC2AC9D275ACCEC000A8D51 /* SuperheroSquadUITests */ = {
 			isa = PBXGroup;
 			children = (
+				AB8CBD53275E6B7F002B189D /* MainViewControllerTests.swift */,
 				ABC2AC9E275ACCEC000A8D51 /* SuperheroSquadUITests.swift */,
 				ABC2ACA0275ACCEC000A8D51 /* SuperheroSquadUITestsLaunchTests.swift */,
 			);
@@ -367,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB8CBD63275E7EFD002B189D /* TestSquadMember.swift in Sources */,
 				ABA03E1D275D6FA900505B1A /* SquadMemberExtension.swift in Sources */,
 				AB857D82275CE14100920D05 /* ReviewViewController.swift in Sources */,
 				ABC2AC82275ACCEB000A8D51 /* MainViewController.swift in Sources */,
@@ -386,6 +401,7 @@
 				AB85567A275B963A00992B9D /* GeneralErrorResponse.swift in Sources */,
 				ABC2ACBA275ACE89000A8D51 /* MarvelClient.swift in Sources */,
 				AB73B4B0275BDF960061F7C0 /* NewCharacterCell.swift in Sources */,
+				AB8CBD62275E7EFA002B189D /* TestDataController.swift in Sources */,
 				ABC2ACB6275ACDE0000A8D51 /* SuperheroSquad.xcdatamodeld in Sources */,
 				AB85567C275BB24500992B9D /* MainViewControllerTableViewExtension.swift in Sources */,
 				ABC2AC80275ACCEB000A8D51 /* SceneDelegate.swift in Sources */,
@@ -399,7 +415,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB8CBD52275E6302002B189D /* CanRecruitTests.swift in Sources */,
-				AB8CBD50275E5A85002B189D /* TestSquadMember.swift in Sources */,
 				ABC2AC95275ACCEC000A8D51 /* SuperheroSquadTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +425,7 @@
 			files = (
 				ABC2AC9F275ACCEC000A8D51 /* SuperheroSquadUITests.swift in Sources */,
 				ABC2ACA1275ACCEC000A8D51 /* SuperheroSquadUITestsLaunchTests.swift in Sources */,
+				AB8CBD54275E6B7F002B189D /* MainViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

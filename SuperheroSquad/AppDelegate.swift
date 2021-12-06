@@ -13,9 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Load data store.
-        DataController.shared.loadDataStore()
-        
+        // Load data store for production or testing (Perhaps need a better way to do this).
+        if CommandLine.arguments.contains("RunningUITests") {
+            DataController.shared = TestDataController()
+        }
+        else {
+            DataController.shared.loadDataStore()
+        }
+
         return true
     }
 

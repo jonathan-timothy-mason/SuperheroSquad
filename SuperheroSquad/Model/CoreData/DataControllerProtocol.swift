@@ -14,7 +14,7 @@ protocol DataControllerProtocol {
     func loadDataStore()
        
     /// Load squad from data store.
-    func loadSquad() -> [SquadMember]
+    func loadSquad() -> [SquadMemberProtocol]
     
     /// Save data store.
     func saveDataStore()

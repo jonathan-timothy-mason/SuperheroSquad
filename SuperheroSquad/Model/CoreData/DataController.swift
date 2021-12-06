@@ -10,6 +10,7 @@ import CoreData
 
 class DataController: DataControllerProtocol {
     static var shared: DataControllerProtocol = DataController()
+    
     let persistentContainer = NSPersistentContainer(name: "SuperheroSquad")
     
     /// Context for accessing data store for main thread.
@@ -25,7 +26,7 @@ class DataController: DataControllerProtocol {
         }
     }
        
-    func loadSquad() -> [SquadMember] {
+    func loadSquad() -> [SquadMemberProtocol] {
         
         let fetchRequest = SquadMember.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "colName", ascending: true)]

@@ -1,12 +1,11 @@
 //
 //  TestSquadMember.swift
-//  SuperheroSquadTests
+//  SuperheroSquad
 //
 //  Created by Jonathan Mason on 06/12/2021.
 //
 
 import Foundation
-@testable import SuperheroSquad
 
 /// Squad member for unit testing.
 class TestSquadMember: SquadMemberProtocol {

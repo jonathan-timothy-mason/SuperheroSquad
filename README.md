@@ -14,6 +14,7 @@ Superhero Squad was developed using:
 - XCode 13.1
 - Swift 5
 - UIKit/Storyboard
+- iOS 13 or later
 
 ## External Libraries/Web APIs
 

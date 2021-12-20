@@ -16,7 +16,7 @@ class ReviewViewController: UIViewController {
     var yesCompletionHandler: (() -> Void)?
     
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var bioLabel: UILabel!
+    @IBOutlet weak var bioTextView: UITextView!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -36,7 +36,7 @@ class ReviewViewController: UIViewController {
         }
         
         questionLabel.text = question
-        bioLabel.text = character.bio.count > 0 ? character.bio : "Bio unavailable."
+        bioTextView.text = character.bio.count > 0 ? character.bio : "Bio unavailable."
         nameLabel.text = character.name.count > 0 ? character.name : "Unknown"
         yesButton.isEnabled = yesIsEnabled
     
@@ -73,14 +73,14 @@ class ReviewViewController: UIViewController {
     /// Indicate activity while photo is being downloaded.
     func startIndicatingActivity() {
         activityIndicator.startAnimating()
-        bioLabel.isHidden = true
+        bioTextView.isHidden = true
         photoImageView.isHidden = true
     }
     
     /// Stop indicating activity.
     func stopIndicatingActivity() {
         activityIndicator.stopAnimating()
-        bioLabel.isHidden = false
+        bioTextView.isHidden = false
         photoImageView.isHidden = false
     }
     

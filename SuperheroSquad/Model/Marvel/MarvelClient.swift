@@ -19,6 +19,7 @@ class MarvelClient {
         static let imageNotFoundFielname = "image_not_available"
         static let thumbnailVariant = "standard_medium"
         static let mainImageVariant = "standard_xlarge"
+        static let characterLimit = 100
 
         case getCharacters(Int)
         
@@ -29,7 +30,7 @@ class MarvelClient {
             case .getCharacters(let numberDownloaded):
                 let ts = String(Int(Constants.appStartDate.timeIntervalSinceNow))
                 let hash = (ts + Endpoints.apiPrivateKey + Endpoints.apiPublicKey).toMD5()
-                return "\(Endpoints.baseURL)/characters?ts=\(ts)&apikey=\(Endpoints.apiPublicKey)&hash=\(hash)&limit=50&offset=\(numberDownloaded)"
+                return "\(Endpoints.baseURL)/characters?ts=\(ts)&apikey=\(Endpoints.apiPublicKey)&hash=\(hash)&limit=\(Endpoints.characterLimit)&offset=\(numberDownloaded)"
             }
         }
         

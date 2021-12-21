@@ -242,7 +242,7 @@
                                     <constraint firstAttribute="height" constant="5" id="6Ua-2L-FIJ"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="1nL-6j-p0a">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="1nL-6j-p0a">
                                 <rect key="frame" x="10" y="792" width="394" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Gt5-5x-p8B"/>

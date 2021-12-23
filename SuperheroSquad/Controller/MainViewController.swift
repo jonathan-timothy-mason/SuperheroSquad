@@ -9,23 +9,53 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    enum Pages: Int {
+        case A = 0
+        case B = 1
+        case C = 2
+        case D = 3
+        case E = 4
+        case F = 5
+        case G = 6
+        case H = 7
+        case I = 8
+        case J = 9
+        case K = 10
+        case L = 11
+        case M = 12
+        case N = 13
+        case O = 14
+        case P = 15
+        case Q = 16
+        case R = 17
+        case S = 18
+        case T = 19
+        case U = 20
+        case V = 21
+        case W = 22
+        case X = 23
+        case Y = 24
+        case Z = 25
+    }
+    
     var squad: [SquadMemberProtocol] = []
-    var characters: [Character] = []
+    
+    var characters: [Pages: [Character]] = [Pages.A:[], Pages.B:[], Pages.C:[], Pages.D:[], Pages.E:[], Pages.F:[], Pages.G:[], Pages.H:[], Pages.I:[], Pages.J:[], Pages.K:[], Pages.L:[], Pages.M:[], Pages.N:[], Pages.O:[], Pages.P:[], Pages.Q:[], Pages.R:[], Pages.S:[], Pages.T:[], Pages.U:[], Pages.V:[], Pages.W:[], Pages.X:[], Pages.Y:[], Pages.Z:[]]
+    var currentPage = Pages.A
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
-    
-    var numberCharactersDownloadedSoFar = 0
-
+    @IBOutlet weak var pager: UIPageControl!
+       
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Load squad from data store.
         loadSquad()
         
         // Load characters from Marvel API.
-        loadCharacters()
+        loadCharactersForCurrentPage()
     }
 
     /// Load squad from data store.
@@ -34,19 +64,11 @@ class MainViewController: UIViewController {
         tableView.reloadData()
     }
     
-    /// Load characters from Marvel API, page by page.
-    func loadCharacters() {
-        MarvelClient.getCharacters(numberDownloaded: numberCharactersDownloadedSoFar, completion: handleResponseToLoadCharacters)
-    }
-    
-    
-    /// Create placeholder characters after first response and total number
-    /// of characters is known.
-    /// - Parameter totalNumberCharacters: Total number of characters.
-    func createPlaceholders(_ totalNumberCharacters: Int) {
-        if self.numberCharactersDownloadedSoFar <= 0 && totalNumberCharacters > 0 {
-            self.characters = Array(repeating: Character(), count: totalNumberCharacters)
-        }
+    /// Load characters from Marvel API for current page.
+    /// - Note: Getting enum name from answer to "How to get the name of enumeration value in Swift?" by Stuart:
+    /// https://stackoverflow.com/questions/24113126/how-to-get-the-name-of-enumeration-value-in-swift
+    func loadCharactersForCurrentPage() {
+        MarvelClient.getCharacters(letter: "\(currentPage)", numberDownloaded: 0, completion: handleResponseToLoadCharacters)
     }
     
     /// Handle response to load characters.
@@ -59,28 +81,10 @@ class MainViewController: UIViewController {
             ControllerHelpers.showMessage(parent: self, caption: "Marvel API Error", introMessage: "There was a problem downloading characters using the Marvel API.", error: error)
             return
         }
-        
-        // Create placeholder characters after first response and total number
-        // of characters is known.
-        createPlaceholders(totalNumberCharacters)
-        
+                
         // Update placeholders with newly loaded characters.
-        if newCharacters.count > 0 {
-            let indexesToUpdate = numberCharactersDownloadedSoFar...numberCharactersDownloadedSoFar + newCharacters.count - 1 // Get indexes of characters to update.
-            
-            // Increment number of downloaded characters.
-            self.numberCharactersDownloadedSoFar += newCharacters.count
-            
-            // Update characters.
-            self.characters.replaceSubrange(indexesToUpdate, with: newCharacters)
-            
-            // Update collection.
-            let indexPathsToUpdate = indexesToUpdate.map { IndexPath(indexes:[0, $0]) } // Convert to IndexPaths.
-            self.collectionView.reloadItems(at: indexPathsToUpdate)
-            
-            // Attempt to load next page.
-            self.loadCharacters()
-        }
+        characters[currentPage] = newCharacters
+        self.collectionView.reloadData()
     }
 }
 

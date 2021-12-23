@@ -11,7 +11,7 @@ import UIKit
 /// CollectionView implementation for MainViewController as extension.
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return characters.count
+        return characters[currentPage]!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -20,7 +20,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewCharacterCell", for: indexPath) as! NewCharacterCell
 
         // Get corresponding character.
-        let character = characters[indexPath.row]
+        let character = characters[currentPage]![indexPath.row]
         if let photo = character.smallPhoto {
             // Image has been downloaded, so set it.
             cell.photo.image = photo
@@ -48,7 +48,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let reviewViewController = self.storyboard!.instantiateViewController(withIdentifier: "ReviewViewController") as! ReviewViewController
 
         // Pass required parameters.
-        let character = characters[indexPath.row]
+        let character = characters[currentPage]![indexPath.row]
         reviewViewController.character = character
         reviewViewController.question = "Recruit?"
         reviewViewController.yesIsEnabled = squad.canRecruite(character: character)

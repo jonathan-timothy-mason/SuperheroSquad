@@ -78,7 +78,7 @@ class MainViewController: UIViewController {
             collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
         }
         else {
-            pager.isEnabled = false // Pevent page change whilst getting characters.
+            pager.isEnabled = false // Prevent page change whilst getting characters.
             
             // Load for first time from Marvel API.
             collectionView.reloadData() // Clear immediately to indicate something is happening.
@@ -100,9 +100,16 @@ class MainViewController: UIViewController {
         }
                 
         // Update placeholders with newly loaded characters.
-        characters[currentPage] = newCharacters
+        characters[currentPage]?.append(contentsOf: newCharacters)
         self.collectionView.reloadData()
         collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        
+        // Are there more characters to include in this page?
+        if totalNumberCharacters > characters[currentPage]!.count {
+            pager.isEnabled = false // Prevent page change whilst getting characters.
+            
+            MarvelClient.getCharacters(letter: "\(currentPage)", numberDownloaded: characters[currentPage]!.count, completion: handleResponseToLoadCharacters)
+        }
     }
     
     /// Handle change of page and display corresponding caharacters.
